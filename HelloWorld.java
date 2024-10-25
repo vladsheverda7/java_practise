@@ -8,5 +8,7 @@ public class HelloWorld {
         Variables var = new Variables();
         String name = var.GetName();
         System.out.print(name);
+
+        final double pi = 3.14;
     }
 }
