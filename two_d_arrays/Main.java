@@ -85,6 +85,7 @@ public class Main {
         }*/
         System.out.println("one count is " + onesCount);
 
+        /*
         String[][] wordData = {{"study", "consider", "examine", "learn"}, {"ponder", "read", "think", "cogitate"}};
 
         int i = 0, j = 0;
@@ -96,6 +97,8 @@ public class Main {
             }
             i++;
         }
+        */
+
 
         double[][] times = {
                 {64.791, 75.972, 68.950, 79.039, 73.006, 74.157},
@@ -117,7 +120,10 @@ public class Main {
             System.out.println("Average of runner " + outer + ": " + averageVal);
         }
 
-        double[][] times_1 = {{64.791, 75.972, 68.950, 79.039, 73.006, 74.157}, {67.768, 69.334, 70.450, 67.667, 75.686, 76.298}, {72.653, 77.649, 74.245, 62.121, 63.379, 79.354}};
+        double[][] times_1 = {
+                {64.791, 75.972, 68.950, 79.039, 73.006, 74.157},
+                {67.768, 69.334, 70.450, 67.667, 75.686, 76.298},
+                {72.653, 77.649, 74.245, 62.121, 63.379, 79.354}};
 
         double lapTime = 0.0;
         for(int outer = 0; outer < times_1[0].length; outer++){
@@ -132,5 +138,72 @@ public class Main {
             System.out.println("Sum of lap " + outer + " times: " + lapTime);
             System.out.println("Average time for lap " + outer + ": " + averageVal);
         }
+
+        int[][] imageData={
+                {100,90,255,80,70,255,60,50},
+                {255,10,5,255,10,5,255,255},
+                {255,255,255,0,255,255,255,75},
+                {255,60,30,0,30,60,255,255}
+        };
+        // Declare and initialize the 2D array newImage
+        int[][] newImage = new int[4][6];
+
+        // Add a nested `for` loop and copy the data of `imagedata` to `newImage`
+        for(int i=0; i<newImage.length; i++){
+            for(int j=0; j<newImage[i].length; j++){
+                newImage[i][j] = imageData[i][j];
+            }
+        }
+
+        System.out.println(Arrays.deepToString(newImage));
+
+        for(int i=0; i<newImage.length; i++){
+            for(int j=0; j<newImage[i].length; j++){
+                // Add the if-else statement here
+                if(newImage[i][j]-50<0){
+                    newImage[i][j] = 0;
+                }
+                else{
+                    newImage[i][j]-=50;
+                }
+            }
+        }
+        System.out.println(Arrays.deepToString(newImage));
+
+        //Declare and initialize a 4x3 2D array of doubles called `scores`
+        double[][] scores = {{80.4, -1, -1}, {96.2, -1, -1}, {100.0, -1, -1}, {78.9, -1, -1}};
+
+
+        System.out.println(Arrays.deepToString(scores));
+
+        //Manually enter the scores for the second exam
+        scores[0][1] = 89.7;
+        scores[1][1] = 90.5;
+        scores[2][1] = 93.6;
+        scores[3][1] = 88.1;
+
+        System.out.println(Arrays.deepToString(scores));
+
+        //Declare and initialize an empty 4x2 2D array of double values called `newScores`
+        double[][] newScores = new double[4][2];
+
+        //Use `for` loops to copy the scores
+        for(int i = 0; i < newScores.length; i++){
+            for(int j = 0; j < newScores[i].length; j++){
+                newScores[i][j] = scores[i][j];
+            }
+        }
+
+        System.out.println(Arrays.deepToString(newScores));
+
+        //Iterate through the `newScores` 2D array and use `if` statement to add 2 additional points
+        for(int i = 0; i < newScores.length; i++){
+            for(int j = 0; j < newScores[i].length; j++){
+                if(newScores[i][j]<90){
+                    newScores[i][j]+=2;
+                }
+            }
+        }
+        System.out.println(Arrays.deepToString(newScores));
     }
 }
